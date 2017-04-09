@@ -32,12 +32,18 @@ var Calculadora = {
 	/* función vision de calculadora*/
 	viewnum: function(valor){
 		if(this.pantalla.length < 8){
-			
-			this.pantalla += valor;
+			if(this.pantalla != "0"){
+				this.pantalla += valor;
+			}else if(valor != 0){
+				this.pantalla = "",
+				this.pantalla += valor;
+			}
 			this.viewdisplay();
-			/*alert(this.pantalla);*/
 		}
 	},
+	sign: function(){
+		this.pantalla = 
+	}
 	/*imprime en pantalla*/
 	viewdisplay: function(){
 		document.getElementById("display").innerHTML = this.pantalla;
