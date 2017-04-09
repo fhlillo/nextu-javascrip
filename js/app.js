@@ -1,6 +1,7 @@
 var Calculadora = {
 	/* Declaración de variable*/
 	pantalla: document.getElementById("display").innerHTML,
+	decimal: 0,
 	inicio: (
 		function(){
 			this.EventosClick();
@@ -30,7 +31,16 @@ var Calculadora = {
 	},
 	/* función vision de calculadora*/
 	viewnum: function(valor){
-		alert(valor);
+		if(this.pantalla.length < 8){
+			
+			this.pantalla += valor;
+			this.viewdisplay();
+			/*alert(this.pantalla);*/
+		}
+	},
+	/*imprime en pantalla*/
+	viewdisplay: function(){
+		document.getElementById("display").innerHTML = this.pantalla;
 	}
 }
 Calculadora.inicio();
