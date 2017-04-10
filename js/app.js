@@ -2,6 +2,7 @@ var Calculadora = {
 	/* Declaración de variable*/
 	pantalla: document.getElementById("display").innerHTML,
 	decimal: 0,
+	signo: 0,
 	inicio: (
 		function(){
 			this.EventosClick();
@@ -42,11 +43,18 @@ var Calculadora = {
 		}
 	},
 	sign: function(){
-		this.pantalla = 
-	}
+		/*this.pantalla = Number(this.pantalla);*/
+			if(this.signo == 0){
+				document.getElementById("display").innerHTML = Number(this.pantalla) * -1,
+				this.signo = 1;
+			}else{
+				document.getElementById("display").innerHTML = Number(this.pantalla) * 1,
+				this.signo = 0;
+			}
+	},
 	/*imprime en pantalla*/
 	viewdisplay: function(){
 		document.getElementById("display").innerHTML = this.pantalla;
-	}
+	}		
 }
 Calculadora.inicio();
