@@ -109,8 +109,6 @@ var Calculadora = {
 			default:
 				break;
 		}
-
-		
 		this.viewdisplay();
 	},
 	/* Se asignan teclas */
@@ -191,6 +189,9 @@ var Calculadora = {
 	},
 	/*imprime en pantalla*/
 	viewdisplay: function(){
+		if(this.pantalla.toString().length > this.controlen){
+			this.pantalla = this.pantalla.toString().substring(0,8);
+		}
 		document.getElementById("display").innerHTML = this.pantalla;
 	}		
 }
