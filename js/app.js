@@ -52,9 +52,8 @@ var Calculadora = {
 			this.viewdisplay();
 		}
 	},
+	/* funcion limpieza*/
 	on: function(){
-		/*document.getElementById("display").innerHTML = 0,
-		this.pantalla = document.getElementById("display").innerHTML,*/
 		this.pantalla = "0",
 		this.decimal = 0,
 		this.signo = 0,
@@ -62,8 +61,8 @@ var Calculadora = {
 		this.controlen = 8 
 		this.viewdisplay();
 	},
+	/* función estado negativo o positivo*/
 	sign: function(){
-		/*this.pantalla = Number(this.pantalla);*/
 			if(this.signo == 0){
 				this.pantalla = "-" + this.pantalla,
 				this.signo = 1;
@@ -73,6 +72,7 @@ var Calculadora = {
 			}
 		this.viewdisplay();
 	},
+	/*función decimal*/
 	punto: function(){
 		if(this.decimal == 0){
 			this.pantalla += ".";
