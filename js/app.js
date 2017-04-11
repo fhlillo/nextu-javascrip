@@ -15,8 +15,14 @@ var Calculadora = {
 			this.EventosClick();
 		}
 	),
+	/*animación botones*/
+	animacionuno: function(tecla){		
+		document.getElementById(tecla).style.transform="scale(0.9)";
+		setTimeout(function() {document.getElementById(tecla).style.transform="scale(1)";}, 200);
+	},
 	/*funcion restar*/
 		menos: function(){
+		    this.animacionuno("menos");
 			this.num1 = Number(this.pantalla);
 			this.pantalla = "",
 			this.opcion = 2,
@@ -29,6 +35,7 @@ var Calculadora = {
 	},
 	/*funcion multiplica*/
 		por: function(){
+		    this.animacionuno("por");
 			this.num1 = Number(this.pantalla),
 			this.pantalla = "",
 			this.opcion = 3,
@@ -41,6 +48,7 @@ var Calculadora = {
 	},
 	/*funcion dividir*/
 		dividido: function(){
+		    this.animacionuno("dividido");
 			this.num1 = Number(this.pantalla),
 			this.pantalla = "",
 			this.opcion = 4,
@@ -53,6 +61,7 @@ var Calculadora = {
 	},
 	/*funcion sumar*/
 	mas: function(){
+		    this.animacionuno("mas");
 			this.num1 += Number(this.pantalla),
 			this.pantalla = "",
 			this.opcion = 1,
@@ -65,6 +74,7 @@ var Calculadora = {
 	},
 	/*función igual*/
 	igual: function(){
+		this.animacionuno("igual");
 		switch(this.opcion){
 			case 1:
 					if(this.auxestado == 0){
@@ -134,6 +144,7 @@ var Calculadora = {
 	},
 	/* función vision de calculadora*/
 	viewnum: function(valor){
+		this.animacionuno(valor);
 		if(this.signo == 1 && this.stop == 0){
 			this.controlen += 1,
 			this.stop = 1;
@@ -154,6 +165,7 @@ var Calculadora = {
 	},
 	/* funcion limpieza*/
 	on: function(){
+		this.animacionuno("on");
 		this.pantalla = "0",
 		this.decimal = 0,
 		this.signo = 0,
@@ -168,6 +180,7 @@ var Calculadora = {
 	},
 	/* función estado negativo o positivo*/
 	sign: function(){
+		this.animacionuno("sign");
 		if(this.pantalla != 0){
 			if(this.signo == 0){
 				this.pantalla = "-" + this.pantalla,
@@ -181,6 +194,7 @@ var Calculadora = {
 	},
 	/*función decimal*/
 	punto: function(){
+		this.animacionuno("punto");
 		if(this.decimal == 0){
 			this.pantalla += ".";
 		}
