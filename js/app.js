@@ -5,12 +5,36 @@ var Calculadora = {
 	signo: 0,
 	controlen: 8,
 	stop: 0,
+	num1: 0,
+	opcion: 0,
+	auxnum: 0,
+	auxestado: 0,
 	inicio: (
 		function(){
 			this.EventosClick();
 		}
 	),
-	
+	/*funcion sumar*/
+	mas: function(){
+		this.num1 += Number(this.pantalla) ,
+		this.pantalla = "",
+		this.opcion = 1,
+		this.auxestado = 0,
+		this.auxnum = 0,
+		this.viewdisplay();
+	},
+	/*función igual*/
+	igual: function(){
+		if(this.auxestado == 0){
+			this.auxnum = Number(this.pantalla),
+			this.pantalla = this.num1 + Number(this.pantalla),
+			this.auxestado = 1;
+		}else{
+			this.pantalla = Number(this.pantalla)+this.auxnum;
+		}
+		
+		this.viewdisplay();
+	},
 	/* Se asignan teclas */
 	EventosClick: function(){
 		document.getElementById("0").addEventListener("click",function(){Calculadora.viewnum("0")});
@@ -59,6 +83,9 @@ var Calculadora = {
 		this.signo = 0,
 		this.stop = 0,
 		this.controlen = 8 
+		this.num1 = 0,
+		this.auxestado = 0,
+		this.auxnum = 0,			
 		this.viewdisplay();
 	},
 	/* función estado negativo o positivo*/
