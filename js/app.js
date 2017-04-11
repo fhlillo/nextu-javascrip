@@ -17,11 +17,7 @@ var Calculadora = {
 	),
 	/*funcion restar*/
 		menos: function(){
-			if(this.pantalla != 0){
-				this.num1 -= Number(this.pantalla) ,
-			}else{
-				this.num1 = Number(this.pantalla) ,
-			}
+			this.num1 = Number(this.pantalla);
 			this.pantalla = "",
 			this.opcion = 2,
 			this.auxestado = 0,
@@ -33,11 +29,7 @@ var Calculadora = {
 	},
 	/*funcion multiplica*/
 		por: function(){
-			if(this.pantalla != 0){
-				this.num1 *= Number(this.pantalla) ,
-			}else{
-				this.num1 = Number(this.pantalla) ,
-			}
+			this.num1 = Number(this.pantalla),
 			this.pantalla = "",
 			this.opcion = 3,
 			this.auxestado = 0,
@@ -49,11 +41,7 @@ var Calculadora = {
 	},
 	/*funcion dividir*/
 		dividido: function(){
-			if(this.pantalla != 0){
-				this.num1 /= Number(this.pantalla) ,
-			}else{
-				this.num1 = Number(this.pantalla) ,
-			}
+			this.num1 = Number(this.pantalla),
 			this.pantalla = "",
 			this.opcion = 4,
 			this.auxestado = 0,
@@ -65,7 +53,7 @@ var Calculadora = {
 	},
 	/*funcion sumar*/
 	mas: function(){
-			this.num1 += Number(this.pantalla) ,
+			this.num1 += Number(this.pantalla),
 			this.pantalla = "",
 			this.opcion = 1,
 			this.auxestado = 0,
@@ -95,7 +83,7 @@ var Calculadora = {
 						this.auxestado = 1,
 						this.num1 = 0;
 					}else{
-						this.pantalla = Number(this.pantalla)+this.auxnum;
+						this.pantalla = Number(this.pantalla)-this.auxnum;
 					}
 				break;
 			case 3:
@@ -105,7 +93,7 @@ var Calculadora = {
 						this.auxestado = 1,
 						this.num1 = 0;
 					}else{
-						this.pantalla = Number(this.pantalla)+this.auxnum;
+						this.pantalla = Number(this.pantalla)*this.auxnum;
 					}
 				break;
 			case 4:
@@ -115,7 +103,7 @@ var Calculadora = {
 						this.auxestado = 1,
 						this.num1 = 0;
 					}else{
-						this.pantalla = Number(this.pantalla)+this.auxnum;
+						this.pantalla = Number(this.pantalla)/this.auxnum;
 					}
 				break;
 			default:
@@ -175,7 +163,9 @@ var Calculadora = {
 		this.controlen = 8 
 		this.num1 = 0,
 		this.auxestado = 0,
-		this.auxnum = 0,			
+		this.auxnum = 0,	
+		this.opcion = 0,
+		this.auxresultado = 0,
 		this.viewdisplay();
 	},
 	/* función estado negativo o positivo*/
